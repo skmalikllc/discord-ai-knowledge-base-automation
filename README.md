@@ -79,10 +79,10 @@ The Q&A path and the scoring path share Discord and nothing else. The assistant 
 
 ## Results
 
-- Six knowledge bases loaded and routed, covering multiple editions of several separate products plus a general support set. Two further products were identified as not yet wired, and recorded as outstanding rather than quietly left out. See [docs/loaded-knowledge-bases.md](docs/loaded-knowledge-bases.md).
-- Answers verified against the source documents for the routed stores, including deliberate out-of-scope questions to confirm the assistant refuses rather than improvises.
-- Cross-edition contamination closed: questions asked in one edition's channel are answered only from that edition's store.
-- Contribution scoring and rank promotion running end to end, with a promotion-status bug fixed that had been stopping members from being re-evaluated after their first promotion.
+- Six routed knowledge areas were configured, backed by eight vector stores, covering multiple editions of several separate products plus a general support set. Two further products were identified as not yet wired, and recorded as outstanding rather than quietly left out. See [docs/loaded-knowledge-bases.md](docs/loaded-knowledge-bases.md).
+- Selected answers were verified through live Discord tests and route checks.
+- Routing isolation was verified for the newly added knowledge base and one existing control route.
+- Contribution scoring and rank promotion running end to end, with a promotion-status bug fixed: some members were blocked from later promotion checks after their first promotion due to a persistent status value.
 
 No throughput, accuracy-rate or engagement figures are published here. They were not measured under conditions I would be willing to quote, and I am not going to estimate them.
 
@@ -102,6 +102,10 @@ This repository contains no client or community name, no server address, no API 
 | [examples/route-selector-example.js](examples/route-selector-example.js) | Illustrative routing sketch |
 | [examples/contribution-scoring-flow.md](examples/contribution-scoring-flow.md) | The scoring path, step by step |
 | [examples/rank-promotion-logic.md](examples/rank-promotion-logic.md) | The promotion rules and the bug |
+
+## Related projects
+
+- [discord-knowledge-assistant](https://github.com/skmalikllc/discord-knowledge-assistant) — the reference architecture behind this build: the design decisions on refusal behaviour, version isolation, source attribution and conflict surfacing, written up separately and equally sanitized.
 
 ## License
 

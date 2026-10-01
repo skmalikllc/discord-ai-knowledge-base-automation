@@ -63,7 +63,7 @@ Rank is evaluated from the member record rather than awarded by hand. The checks
 
 The ranks are split. **Lower ranks promote automatically** when the requirements are met. **Higher ranks are held for staff or admin approval** — a scoring system is a reasonable way to recognise participation and a poor way to hand out standing in a community, so the automation prepares the decision and a person makes it. Approved changes are synced to Discord as role updates.
 
-One real bug is worth recording, because it is the kind that hides well: a member's promotion status was being set to a terminal "promoted" value, and the evaluation then skipped anyone carrying that value. The first promotion worked. Every promotion after it silently never happened, and from the outside the automation looked healthy. Fixed by treating promotion status as the result of the most recent evaluation rather than a permanent flag on the member.
+One real bug is worth recording, because it is the kind that hides well: a member's promotion status was being set to a terminal "promoted" value, and the evaluation then skipped anyone carrying that value. Some members were blocked from later promotion checks after their first promotion because of that persistent status, and from the outside the automation looked healthy. Fixed by treating promotion status as the result of the most recent evaluation rather than a permanent flag on the member.
 
 Details in [examples/rank-promotion-logic.md](examples/rank-promotion-logic.md).
 
@@ -85,8 +85,8 @@ Ruleset C is a large two-theatre edition. The document set covers the whole game
 - **Verify before loading.** Each file was checked by reading what had actually been extracted, not by trusting the file name or the indexer's success report. This is where most of the time went, and it is why section 8 exists.
 - **Build alongside.** The store, VECTOR_STORE_ID_REMOVED, was built as a new store rather than by emptying and refilling an existing one.
 - **Route.** One channel, DISCORD_CHANNEL_ID_REMOVED, mapped to that one store. No fallback.
-- **Test.** In-scope questions checked against the printed documents; out-of-scope questions checked for the refusal phrase; a question belonging to a different edition asked deliberately in this channel to confirm it is not answered from here.
-- **Repoint.** One routing value changed. The previous store kept for a week, so rollback was one line rather than a re-upload under pressure.
+- **Test.** Selected answers verified through live Discord tests and route checks. Routing isolation was verified for the newly added knowledge base and one existing control route.
+- **Repoint.** One routing value changed. The previous configuration was backed up and kept available until the new routing was confirmed, so rollback was one line rather than a re-upload under pressure.
 
 ## 8. Testing and verification
 
