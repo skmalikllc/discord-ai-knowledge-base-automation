@@ -2,16 +2,17 @@
 
 What was prepared, loaded and routed in this phase, with product titles withheld. Each store holds exactly one edition of one product; no store holds two editions.
 
-| Store | Covers | Editions in this store |
+| Knowledge area | Covers | Vector stores |
 |---|---|---|
-| A-1 / A-2 / A-3 | Product A, early line | three separate stores, one per edition |
-| B | Product B | one edition |
-| C | Product C, a large two-theatre edition | one edition |
-| D | Product D | one edition |
-| E | Product E | one edition |
-| GEN | General support and customer-service material | not edition-specific |
+| A | Product A, early line | 3 — one per edition |
+| B | Product B | 1 |
+| C | Product C, a large two-theatre edition | 1 |
+| D | Product D | 1 |
+| E | Product E | 1 |
+| GEN | General support and customer-service material | 1 |
+| **Total** | **6 knowledge areas** | **8 vector stores** |
 
-**Six knowledge bases, routed.** Product A's three editions are three separate stores and three separate channels, which is the whole point of the design: a question asked in the edition-2 channel is answered from the edition-2 documents and from nothing else.
+**Six routed knowledge areas, backed by eight vector stores.** The two numbers differ because Product A's three editions are three separate stores on three separate channels — which is the whole point of the design: a question asked in the edition-2 channel is answered from the edition-2 documents and from nothing else. A knowledge area is a product or support line; a store is one edition's documents.
 
 The general support store is the one store that is not edition-specific. It covers ordering, shipping, replacement parts and similar questions, where there are no editions to confuse and the risk of a blended answer does not exist.
 
@@ -28,4 +29,4 @@ These are recorded here rather than left out. A list that quietly omits what is 
 
 ## A note on counting
 
-Six loaded is six stores built, routed, and tested against their own documents. It is not a claim about how much of each product's documentation is complete — several document sets had gaps, and the assistant's fixed refusal phrase is what makes those gaps countable. Closing them is the document owner's work, not the assistant's.
+Six routed knowledge areas, backed by eight vector stores, means eight stores built, routed and tested against their own documents. It is not a claim about how much of each product's documentation is complete — several document sets had gaps, and the assistant's fixed refusal phrase is what makes those gaps countable. Closing them is the document owner's work, not the assistant's.
