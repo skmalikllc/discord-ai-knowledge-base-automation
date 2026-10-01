@@ -32,11 +32,11 @@ The member record is the source of truth and the role is a reflection of it. If 
 
 ## The bug: `Promotion Status = Promoted` blocked all future checks
 
-**Symptom.** Members were promoted once and then never again. Nobody reported it as a bug, because one successful promotion looks like the system working, and the absence of a second promotion months later looks like not having earned it yet.
+**Symptom.** Some members were blocked from later promotion checks after their first promotion, because of a persistent status value on their record. Nobody reported it as a bug: one successful promotion looks like the system working, and the absence of a second one later looks like not having earned it yet.
 
 **Cause.** Promotion status was being written as a terminal value — `Promoted` — on the member record, and the evaluation excluded members carrying that value. The exclusion was there for a sensible-sounding reason: don't re-process someone who has just been promoted. But it was written as a permanent property of the member instead of a property of one evaluation run, so the exclusion never expired.
 
-The result: the scenario ran on schedule, reported success every time, and promoted nobody. From the dashboard it was healthy.
+The result: the scenario ran on schedule, reported success every time, and silently skipped every member carrying that value. From the dashboard it was healthy.
 
 **Fix.** Promotion status became the **outcome of the most recent evaluation** rather than a flag that sticks to the member. Every member is re-evaluated on every run; the status field records what the last run decided, and a member who was promoted last month is simply evaluated again against the requirements for their new rank.
 
